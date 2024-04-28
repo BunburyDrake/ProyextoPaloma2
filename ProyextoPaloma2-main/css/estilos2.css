@@ -1,0 +1,207 @@
+/* Importar fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(90deg, #974141, #e3520f);
+    color: #ffffff;
+    padding: 20px;
+}
+
+.container-all {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgb(255, 0, 0);
+}
+
+.ctn-form {
+    flex: 1;
+    padding: 40px;
+    background: #390404;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #810000;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #2a0101;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+/* Estilos para la barra de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border: 2px solid #ffc400;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    height: 100%;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    background-color: transparent; /* Fondo transparente */
+    transition: width 0.3s ease; /* Transición para la animación */
+}
+.search-bar button {
+    height: 100%;
+    padding: 0 20px;
+    border: none;
+    border-left: 1px solid #0f8011;
+    background-color: #ff9501;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.9s ease; /* Transición para el color de fondo */
+}
+
+.search-bar button:hover {
+    background-color: #b35f00; /* Color de fondo al pasar el mouse */
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #dc0000;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.text-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.text-footer a {
+    color: #007bff;
+    font-weight: 500;
+}
+
+/* Estilos para la sección de precios */
+.Precios {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    padding: 20px;
+    background-color: #efac0088;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgb(0, 0, 0);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.Precios table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.Precios th,
+.Precios td {
+    padding: 12px;
+    border-bottom: 1px solid #de0000;
+    text-align: left;
+    color: #000000;
+}
+
+.Precios th {
+    background-color: #aeff00;
+    color: #ffffff;
+}
+
+.Precios tr:nth-child(even) {
+    background-color: #cb4747;
+}
+
+/* Estilos para paginación */
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination li {
+    margin: 0 5px;
+    padding: 8px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination li.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Estilos específicos para ciertas clases */
+.sillas,
+.Sillas,
+.Mesa,
+.Carpa {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+}
