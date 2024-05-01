@@ -140,7 +140,7 @@ input[type="submit"]:hover {
 /* Estilos para la sección de precios */
 .Precios {
     position: fixed;
-    top: 100px;
+    top: 65%;
     right: 20px;
     padding: 20px;
     background-color: #efac0088;
@@ -204,4 +204,22 @@ input[type="submit"]:hover {
     font-size: 18px;
     font-weight: 500;
     color: #ffffff;
+}
+.video{
+position: fixed;
+top: 65%;
+margin-top: 10px;
+margin-left: 10px;
+margin-bottom: 10px;
+margin-right: 10px;
+border-style: solid;
+border-radius: 10px;
+width: 350px;
+height: 200px;
+padding: 20px;
+padding-inline: 1;
+border-color: #2a0101;
+
+box-shadow: 0 2px 8px rgb(0, 0, 0);
+
 }

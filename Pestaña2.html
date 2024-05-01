@@ -3,51 +3,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renta de Muebles para Fiestas</title>
+
+    <link rel="stylesheet" href="css/estilos2.css">
    
-    <style>
-        .search-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            background-color: #ec8714;
-        }
-        .contact-info {
-            position: fixed;
-            top: 0;
-            right: 0;
-            padding: 20px;
-            background-color: #7a4080;
-            color: #ffffff;
-        }
-        .search-bar {
-        display: grid;
-        grid-template-columns: -10fr auto auto; /* Columnas con tamaños flexibles */
-        gap: 4px; /* Espacio entre los elementos */
-    }
-    .pagination {
-            list-style: none;
-            display: flex;
-            gap: 10px;
-        }
-        .pagination li {
-            padding: 5px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-        .pagination li.active {
-            background-color: #007bff;
-            color: #fff;
-        }
-    
-    </style>
 </head>
 <body style="background-color: #4dbeff81;">
     
 
 
     <header>
-        <img src="logoEm.png" width="75" height="90">
+        <a href="cerrar-sesion.php"><img src="logoEm.png" width="75" height="90"></a>
         
     </header>
 
@@ -55,39 +20,64 @@
     <div class="search-bar">
        
         <input type="text" id="search-input" placeholder="Buscar artículo...">
-    <button onclick="buscarArticulo()">Buscar</button>
-   <a href="C:\Users\gusgu\OneDrive\Documentos\Web\Proyecto\Registro.html"> <button>Registro</button> </a>
+    <button onclick="buscarArticulo()"><img src="iconL.png" width="30" height="30"><h3>Buscar</h3></button>
+   
     </div>
     
 <div>
     
 </div>
-    <!-- Apartado lateral con información de contacto -->
-    <aside class="contact-info">
-        <h2>Contacto</h2>
-        <p>Teléfono: <a href="tel:+123456789">123-456-789</a></p>
-        <p>Correo electrónico: <a href="mailto:PartyEventRent@gmail.com">PartyEventRent@gmail.com</a></p>
-    </aside>
-    <button onclick="toggleContactInfo()">Mostrar/ocultar información de contacto</button>
+<aside class="Precios">
+   <table border="1px">
+    <tr>
+        <center><td>articulo</td><td>precio</td><td>unidades</td><td>capacidad</td></center>
+    </tr>
+    <tr>
+        <center><td>Mantel de Plastico </td><td>50</td><td>1</td><td>10 personas</td></center>
+
+    </tr>
+    <tr>
+        <center><td>Carpa Fiesta</td><td>2000</td><td>1</td><td>50 personas</td></center>
+
+    </tr>
+    <tr>
+        <center><td>Mesas Plegables Plastico </td><td>1000</td><td>1</td><td>30 personas</td></center>
+
+    </tr>
+    <tr>
+        <center><td>Sillas Plegables de Plastico </td><td>1500</td><td>50</td><td>50 personas</td></center>
+
+    </tr>
+
+   </table>
+</aside>
+
+<button onclick="togglePrecio()">Mostrar/ocultar Precios</button>
+<aside class="contact-info">
+    <h2>Contacto</h2>
+    <p>Teléfono: <a href="tel:+123456789">123-456-789</a></p>
+    <p>Correo electrónico: <a href="mailto:PartyEventRent@gmail.com">PartyEventRent@gmail.com</a></p>
+</aside>
+<button onclick="toggleContactInfo()">Mostrar/ocultar información de contacto</button>
 
     <!-- Aquí puedes agregar la lista de artículos disponibles -->
     <section id="lista-articulos">
         <!-- Ejemplo: -->
-        <a href="sillas.html">
+        <a href="MesaN.html">
             <div class="sillas" >
-            <h3>Sillas</h3>
-            <img src="silla.png" width="200" height="200">
+            <h3>Mantel de plástico negro</h3>
+            <img src="mantelN.png" width="200" height="200">
         </a>
-        <center></center><button onclick="agregarAlCarrito('Sillas', 2)">Agregar al carrito</button>
+        <center></center><button onclick="agregarAlCarrito('Mantel de plástico negro')">Agregar al carrito</button>
         </div>
         
    
         <div class="Mesa">
-            <a href="Mesa.html">
-            <h3>Mesa</h3>
+            <a href="Mesa2.html">
+            <h3>Mesa Blanca</h3>
         </a>
-        <img src="mesa.png" width="200" height="200">
-            <p>Mesa de Plastico 10x5</p>
+        <img src="Mesa2.png" width="200" height="200">
+            <p>Mesa de Plastico Blanca 10x5</p>
         </div>
    
         <div class="Carpa 1">
@@ -97,17 +87,18 @@
         <img src="CarpaGr.png" width="200" height="200">
             <p>Carpa para 50 personas</p>
         </div>
-        <a href="Carpa.html">
-        <div class="Carpa 2">
-            <h3>Carpa chica</h3></a>
-            <img src="CarpaG.png" width="200" height="200">
-            <p>Carpa para 30 personas</p>
+        
+        <div class="Sillas">
+            <a href="silla2.html">
+            <h3>Sillas</h3></a>
+            <img src="sillaB.jpg" width="200" height="200">
+            <p>Sillas Imitacion Madera</p>
         </div>
-        <!-- Repite este bloque para cada artículo -->
+       
     </section>
 
    <center> <ul class="pagination">
-        <li ><a href="index.html">1</a></li>
+        <li ><a href="lolillo.html">1</a></li>
         <li class="active">2</li>
         
         <!-- ... Agrega más números de página aquí ... -->
@@ -140,7 +131,10 @@
             const contactInfo = document.querySelector('.contact-info');
             contactInfo.style.display = (contactInfo.style.display === 'none') ? 'block' : 'none';
         }
-       
+        function togglePrecio() {
+    const Precios = document.querySelector('.Precios');
+    Precios.style.display = (Precios.style.display === 'none') ? 'block' : 'none';
+        }
     </script>
 </body>
 </html>
