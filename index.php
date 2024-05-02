@@ -44,8 +44,8 @@
 
         <div class="ctn-text">
             <div class="capa"></div>
-            <h1 class="title-description">Lorem ipsum dolor sit amet.</h1>
-            <p class="text-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat natus dolore ea dicta molestias totam iusto perspiciatis iste obcaecati quod dolor, eaque qui asperiores? Molestias ad nemo placeat est quidem?</p>
+            <h1 class="title-description">RentFest.</h1>
+            <p class="text-description">Nos especializamos en la renta de mobiliario de alta calidad para todo tipo de celebraciones. Con una experiencia de más de una década en el mercado, ofrecemos una amplia gama de opciones para satisfacer las necesidades de nuestros clientes, desde sillas elegantes y mesas robustas hasta decoraciones temáticas y accesorios únicos.</p>
         </div>
 
     </div>
