@@ -8,9 +8,8 @@
     
 </head>
 <body  class="background1">
-    <video class="video" src="An8uXNGAVgffOAihVqosfWAIrDNUNidXimUP57NtJpdNYuzYq18v8FmeH7YiLPHuyAJxMZoDhotzqleS7nU9iCrm.mp4" controls autoplay preload="autoplay" poster="logoEm.png" loop></video>
     
-
+  
 
     <header>
         <a href="cerrar-sesion.php"><img src="logoEm.png" width="75" height="90"></a>
@@ -59,6 +58,11 @@
         <p>Correo electrónico: <a href="mailto:PartyEventRent@gmail.com">PartyEventRent@gmail.com</a></p>
     </aside>
     <button onclick="toggleContactInfo()">Mostrar/ocultar información de contacto</button>
+    <aside class="Video">
+        <video class="video" src="An8uXNGAVgffOAihVqosfWAIrDNUNidXimUP57NtJpdNYuzYq18v8FmeH7YiLPHuyAJxMZoDhotzqleS7nU9iCrm.mp4" controls autoplay preload="autoplay" poster="logoEm.png" loop></video>
+    </aside>
+    <button onclick="toggleVideo()">Mostrar/ocultar Video</button>
+    
 
     <!-- Aquí puedes agregar la lista de artículos disponibles -->
     <section id="lista-articulos">
@@ -144,6 +148,10 @@
     const Precios = document.querySelector('.Precios');
     Precios.style.display = (Precios.style.display === 'none') ? 'block' : 'none';
 }
+function toggleVideo() {
+            const Video = document.querySelector('.Video');
+            Video.style.display = (Video.style.display === 'none') ? 'block' : 'none';
+        }
 
        
     </script>
