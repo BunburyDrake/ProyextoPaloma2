@@ -223,3 +223,25 @@ border-color: #2a0101;
 box-shadow: 0 2px 8px rgb(0, 0, 0);
 
 }
+/* botones nose si se vean bien o nel xd*/
+button {
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: #ffae00;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #fc5c00;
+}
+
+
+/* Estilos para el video */
+.Video {
+    display: none; /* Oculta inicialmente el video */
+    margin-bottom: 20px;
+}
