@@ -12,7 +12,7 @@
   
 
     <header>
-        <a href="cerrar-sesion.php"><img src="logoEm.png" width="75" height="90"></a>
+        <a href="cerrar-sesion.php"><img src="images/logoEm.png" width="75" height="90"></a>
         
     </header>
 
@@ -20,7 +20,7 @@
     <div class="search-bar">
        
         <input type="text" id="search-input" placeholder="Buscar artículo...">
-    <button onclick="buscarArticulo()"><img src="iconL.png" width="30" height="30"><h3>Buscar</h3></button>
+    <button onclick="buscarArticulo()"><img src="images/iconL.png" width="30" height="30"><h3>Buscar</h3></button>
    
     </div>
     
@@ -70,7 +70,7 @@
         <a href="MesaN.html">
             <div class="sillas" >
             <h3>Mantel de plástico negro</h3>
-            <img src="mantelN.png" width="200" height="200">
+            <img src="images/mantelN.png" width="200" height="200">
         </a>
         <center></center><button onclick="agregarAlCarrito('Mantel de plástico negro')">Agregar al carrito</button>
         </div>
@@ -80,7 +80,7 @@
             <a href="Mesa.html">
             <h3>Mesa</h3>
         </a>
-        <img src="mesa.png" width="200" height="200">
+        <img src="images/mesa.png" width="200" height="200">
             <p>Mesa de Plastico 10x5</p>
         </div>
    
@@ -88,14 +88,14 @@
             <a href="CarpaG.html">
             <h3>Carpa Grande</h3>
         </a>
-        <img src="CarpaGr.png" width="200" height="200">
+        <img src="images/CarpaGr.png" width="200" height="200">
             <p>Carpa para 50 personas</p>
         </div>
         
         <div class="Sillas">
             <a href="sillas.html">
             <h3>Sillas</h3></a>
-            <img src="silla.png" width="200" height="200">
+            <img src="images/silla.png" width="200" height="200">
             <p>Sillas Plegables</p>
         </div>
        

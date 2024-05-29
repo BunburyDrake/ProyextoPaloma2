@@ -56,7 +56,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                         $_SESSION["id"] = $id;
                         $_SESSION["email"] = $email;
                         
-                        header("location: bienvenida.php");
+                        $id = $_SESSION['id'];
+header("location: bienvenida.php");
+exit;
                     }else{
                         $password_err = "La contraseña que has introducido no es valida";
                     }
