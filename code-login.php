@@ -5,6 +5,7 @@
     
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         header("location: bienvenida.php");
+        header("location: lolillo.php");
         exit;
     }
 
@@ -58,6 +59,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                         
                         $id = $_SESSION['id'];
 header("location: bienvenida.php");
+header("location: lolillo.php");
 exit;
                     }else{
                         $password_err = "La contraseña que has introducido no es valida";

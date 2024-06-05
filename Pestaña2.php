@@ -106,67 +106,23 @@ if ($enlace === false) {
 </aside>
 <button onclick="toggleVideo()">Mostrar/ocultar Video</button>
 
-<section id="lista-articulos">
-    <a href="MesaN.html">
-        <div class="sillas">
+    <section id="lista-articulos">
+        <!-- Ejemplo: -->
+        <a href="MesaN.html">
+            <div class="sillas" >
             <h3>Mantel de plástico negro</h3>
             <img src="images/mantelN.png" width="200" height="200">
         </a>
         <form action="" method="POST">
-            <?php
-            $producto = "Mantel de plastico negro";
-            ?>
-            <input type="hidden" name="producto" value="<?php echo $producto; ?>">
-            <input type="submit" name="registro" value="Agregar al carrito">
-        </form>
+        <?php
+        $producto = "Mantel de Plastico Negro";
+        ?>
+        <input type="hidden" name="producto" value="<?php echo $producto; ?>">
+        <input type="submit" name="registro" value="Agregar al carrito">
+    </form>
         </div>
-
-        <div class="Mesa">
-            <a href="Mesa.html">
-                <h3>Mesa</h3>
-            
-            <img src="images/mesa.png" width="200" height="200">
-            <p>Mesa de Plastico 10x5</p>
-            </a>
-            <form action="" method="POST">
-            <?php
-            $producto = "Mesa";
-            ?>
-            <input type="hidden" name="producto" value="<?php echo $producto; ?>">
-            <input type="submit" name="registro" value="Agregar al carrito">
-        </form>
-        </div>
-
-        <div class="Carpa 1">
-            <a href="CarpaG.html">
-                <h3>Carpa Grande</h3>
-            
-            <img src="images/CarpaGr.png" width="200" height="200">
-            <p>Carpa para 50 personas</p>
-            </a>
-            <form action="" method="POST">
-            <?php
-            $producto = "Carpar Grande";
-            ?>
-            <input type="hidden" name="producto" value="<?php echo $producto; ?>">
-            <input type="submit" name="registro" value="Agregar al carrito">
-        </form>
-        </div>
-
-        <div class="Sillas">
-            <a href="sillas.html">
-                <h3>Sillas</h3>
-            <img src="images/silla.png" width="200" height="200">
-            <p>Sillas Plegables</p>
-            </a>
-            <form action="" method="POST">
-            <?php
-            $producto = "Sillas";
-            ?>
-            <input type="hidden" name="producto" value="<?php echo $producto; ?>">
-            <input type="submit" name="registro" value="Agregar al carrito">
-        </form>
-        </div>
+        
+   
         <div class="Mesa">
             <a href="Mesa2.html">
             <h3>Mesa Blanca</h3>
@@ -213,10 +169,16 @@ if ($enlace === false) {
         <input type="submit" name="registro" value="Agregar al carrito">
     </form>
         </div>
-</section>
+       
+    </section>
 
-
-<script>
+   <center> <ul class="pagination">
+        <li ><a href="lolillo.php">1</a></li>
+        <li class="active">2</li>
+        
+        <!-- ... Agrega más números de página aquí ... -->
+    </ul></center>
+    <script>
     function buscarArticulo() {
         const input = document.getElementById('search-input').value.toLowerCase();
         const articulos = document.querySelectorAll('#lista-articulos > div');
@@ -264,4 +226,3 @@ if (isset($_POST['registro'])) {
 ?>
 </body>
 </html>
-
