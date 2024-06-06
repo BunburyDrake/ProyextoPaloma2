@@ -69,7 +69,7 @@ mysqli_close($enlace);
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(90deg, #974141, #e3520f);
             margin: 0;
             padding: 0;
         }
@@ -77,12 +77,12 @@ mysqli_close($enlace);
             width: 80%;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: linear-gradient(90deg,#005f5f,#008cba);
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             margin-top: 50px;
         }
         h2 {
-            color: #333;
+            color:#fff;
         }
         table {
             width: 100%;
