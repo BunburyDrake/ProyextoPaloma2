@@ -25,6 +25,25 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if ($id > 0) {
+    // Handle deletion request
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
+        $articulo = $_POST['articulo'];
+
+        // Prepare a delete statement
+        $sql = "DELETE FROM carrito WHERE id_usuario = ? AND articulo = ? LIMIT 1";
+        if ($stmt = mysqli_prepare($enlace, $sql)) {
+            mysqli_stmt_bind_param($stmt, "is", $id, $articulo);
+            
+            if (mysqli_stmt_execute($stmt)) {
+                echo "<div class='message'>Artículo eliminado del carrito.</div>";
+            } else {
+                echo "<div class='message'>Error al eliminar el artículo.</div>";
+            }
+            
+            mysqli_stmt_close($stmt);
+        }
+    }
+
     // Consulta para obtener los artículos del carrito
     $sql = "SELECT articulo FROM carrito WHERE id_usuario = ?";
     if ($stmt = mysqli_prepare($enlace, $sql)) {
@@ -158,6 +177,20 @@ mysqli_close($enlace);
             font-size: 1em;
         }
 
+        .delete-button {
+            background-color: #e35;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-button:hover {
+            background-color: #d8000c;
+        }
+
         @media (max-width: 768px) {
             .container {
                 width: 90%;
@@ -182,10 +215,17 @@ mysqli_close($enlace);
             <table>
                 <tr>
                     <th>Producto</th>
+                    <th>Producto no deseado?</th>
                 </tr>
                 <?php foreach ($productos as $producto): ?>
                     <tr>
                         <td class="producto"><?php echo $producto; ?></td>
+                        <td>
+                            <form method="POST" action="">
+                                <input type="hidden" name="articulo" value="<?php echo $producto; ?>">
+                                <input type="submit" name="delete" value="Eliminar" class="delete-button">
+                            </form>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </table>
@@ -196,5 +236,3 @@ mysqli_close($enlace);
     </div>
 </body>
 </html>
-
-
