@@ -1,13 +1,15 @@
 <?php
+session_start();  // Añadir al inicio del archivo
+
 $DB_SERVER = "localhost";
 $DB_USERNAME = "root";
 $DB_PASSWORD = "";
 $DB_NAME = "login_tuto";
 
-// Establish connection
+// Establecer conexión
 $enlace = mysqli_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
 
-// Check connection
+// Comprobar conexión
 if ($enlace === false) {
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
@@ -25,7 +27,6 @@ if ($enlace === false) {
 <header>
     <a href="cerrar-sesion.php"><img src="images/logoEm.png" width="75" height="90"></a>
     <?php
-    session_start();
     $id = $_SESSION['id'];
     $_SESSION["id"] = $id;
 
@@ -68,13 +69,11 @@ if ($enlace === false) {
     <a href="carrito.php?id=<?php echo $id; ?>"><button>Ver Carrito</button></a>
 </header>
 
-
 <div class="search-bar">
     <input type="text" id="search-input" placeholder="Buscar artículo...">
     <button onclick="buscarArticulo()"><img src="images/iconL.png" width="30" height="30"><h3>Buscar</h3></button>
 </div>
 
-<div></div>
 <aside class="Precios">
     <table border="1px">
         <tr>
@@ -117,6 +116,7 @@ if ($enlace === false) {
             $producto = "Mantel de plastico negro";
             ?>
             <input type="hidden" name="producto" value="<?php echo $producto; ?>">
+            <input type="number" name="cantidad" value="1" min="1">
             <input type="submit" name="registro" value="Agregar al carrito">
         </form>
         </div>
@@ -133,6 +133,7 @@ if ($enlace === false) {
             $producto = "Mesa";
             ?>
             <input type="hidden" name="producto" value="<?php echo $producto; ?>">
+            <input type="number" name="cantidad" value="1" min="1">
             <input type="submit" name="registro" value="Agregar al carrito">
         </form>
         </div>
@@ -146,9 +147,10 @@ if ($enlace === false) {
             </a>
             <form action="" method="POST">
             <?php
-            $producto = "Carpar Grande";
+            $producto = "Carpa Grande";
             ?>
             <input type="hidden" name="producto" value="<?php echo $producto; ?>">
+            <input type="number" name="cantidad" value="1" min="1">
             <input type="submit" name="registro" value="Agregar al carrito">
         </form>
         </div>
@@ -164,6 +166,7 @@ if ($enlace === false) {
             $producto = "Sillas";
             ?>
             <input type="hidden" name="producto" value="<?php echo $producto; ?>">
+            <input type="number" name="cantidad" value="1" min="1">
             <input type="submit" name="registro" value="Agregar al carrito">
         </form>
         </div>
@@ -179,6 +182,7 @@ if ($enlace === false) {
         $producto = "Mesa Blanca";
         ?>
         <input type="hidden" name="producto" value="<?php echo $producto; ?>">
+        <input type="number" name="cantidad" value="1" min="1">
         <input type="submit" name="registro" value="Agregar al carrito">
     </form>
         </div>
@@ -195,6 +199,7 @@ if ($enlace === false) {
         $producto = "Carpa Grande";
         ?>
         <input type="hidden" name="producto" value="<?php echo $producto; ?>">
+        <input type="number" name="cantidad" value="1" min="1">
         <input type="submit" name="registro" value="Agregar al carrito">
     </form>
         </div>
@@ -210,11 +215,11 @@ if ($enlace === false) {
         $producto = "Sillas Imitacion Madera";
         ?>
         <input type="hidden" name="producto" value="<?php echo $producto; ?>">
+        <input type="number" name="cantidad" value="1" min="1">
         <input type="submit" name="registro" value="Agregar al carrito">
     </form>
         </div>
 </section>
-
 
 <script>
     function buscarArticulo() {
@@ -250,10 +255,23 @@ if ($enlace === false) {
 if (isset($_POST['registro'])) {
     $nom = $_POST['producto'];
     $idu = $_SESSION["id"];
+    $cantidad = $_POST['cantidad'];
 
-    
-    $ingresar = "INSERT INTO carrito (articulo, id_usuario) VALUES ('$nom', '$idu')";
-    $ejecutar = mysqli_query($enlace, $ingresar);
+    // Verificar si el producto ya está en el carrito
+    $sql = "SELECT cantidad FROM carrito WHERE articulo = '$nom' AND id_usuario = '$idu'";
+    $result = mysqli_query($enlace, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        // Si el producto ya está en el carrito, actualizar la cantidad
+        $row = mysqli_fetch_assoc($result);
+        $nueva_cantidad = $row['cantidad'] + $cantidad;
+        $sql = "UPDATE carrito SET cantidad = $nueva_cantidad WHERE articulo = '$nom' AND id_usuario = '$idu'";
+    } else {
+        // Si el producto no está en el carrito, insertarlo
+        $sql = "INSERT INTO carrito (articulo, id_usuario, cantidad) VALUES ('$nom', '$idu', $cantidad)";
+    }
+
+    $ejecutar = mysqli_query($enlace, $sql);
 
     if ($ejecutar) {
         echo "Producto agregado al carrito correctamente.";
@@ -264,4 +282,3 @@ if (isset($_POST['registro'])) {
 ?>
 </body>
 </html>
-
