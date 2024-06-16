@@ -6,6 +6,21 @@
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="css/estilos2.css">
         <meta charset="UTF-8">
+        <style>
+          h1,p,img{
+            animation: mover-izquierda-derecha 2s 1;
+            animation-fill-mode: forwards;
+           }
+           @keyframes mover-izquierda-derecha{
+            from{
+transform: translateX(-200px);
+            }
+            to{
+transform: translateX(1px);
+            }
+           }
+            
+         </style>
     </head>
     
 
